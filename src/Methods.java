@@ -1,33 +1,37 @@
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
+
 
 public class Methods {
 
+    public void array(int[] array) {
+        ArrayList<Numbers> lista = new ArrayList<>();
+        int suma=0;
 
-    public void Array() {
-        int[] array = new int[10];
-        Random numbers = new Random();
-        for (int i = 0; i < 10; i++) {
-            array[i] = numbers.nextInt(10);
-            for (int j = 0; j < i; j++) {
-                if (array[j] == array[i]) {
-                    getMinValue(array[j]);
+        if (array.length == 0) {
+            throw new NoSuchElementException();
+        } else {
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array.length; j++) {
+                    if (array[i] == array[j]) {
+                       suma++;
+                    }
                 }
+                lista.add(new Numbers(array[i],suma));
             }
         }
-        String tablicaC = Arrays.toString(array).replace("[", "").replace("]", "");
-        System.out.println(tablicaC);
     }
+    static void compareArrayElements(List<Numbers>list){
 
-    public void getMinValue(int numbers) {
-        int small;
-
-        for (small = 0; small < numbers; small++) {
-
-        }
-        System.out.println("Najmniejsza liczba z liczb powtarzających sie w ponizszej tabeli to: " + small);
+        Collections.sort(list);
     }
 }
+
+
+
+
+
+
+
 
 
 
