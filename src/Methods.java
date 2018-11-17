@@ -17,12 +17,26 @@ public class Methods {
                     }
                 }
                 lista.add(new Numbers(array[i],suma));
+                compareArrayElements(lista);
+
             }
         }
     }
     static void compareArrayElements(List<Numbers>list){
 
         Collections.sort(list);
+        compareBySum(list);
+
+        System.out.println(list);
+    }
+    static void compareBySum(List<Numbers>list){
+        Collections.sort(list, new Comparator<Numbers>() {
+            @Override
+            public int compare(Numbers o1, Numbers o2) {
+              return o1.getSum().compareTo(o2.getSum());
+            }
+        });
+
     }
 }
 
