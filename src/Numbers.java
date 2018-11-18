@@ -25,17 +25,13 @@ public class Numbers implements Comparable<Numbers> {
 
     @Override
     public int compareTo(Numbers o) {
-        if (this.number > o.number)
-            return 1;
-        else if (this.number == o.number)
             return 0;
-        else
-            return -1;
     }
 
     @Override
     public String toString() {
-        return ""+number+"";
+        return "" + number +", "+ sum +
+                "";
     }
 }
 
